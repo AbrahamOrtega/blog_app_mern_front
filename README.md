@@ -1,40 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Blog Application
 
-First, run the development server:
+Aplicación de blog (Client view) desarrollada con el framework [Next.js](https://nextjs.org/), utilizando una arquitectura MERN (MongoDB, Express, React, Node.js).
+
+## Funcionalidades
+
+- **Blog**: Los usuarios pueden leer artículos de blog categorizados y etiquetados.
+- **Markdown**: Los artículos de blog se renderizan utilizando `ReactMarkdown` con soporte para sintaxis de resaltado de código.
+- **Conexión a MongoDB**: La aplicación se conecta a una base de datos MongoDB para almacenar y recuperar datos de los blogs.
+- **Componentes Reutilizables**: Uso de componentes reutilizables para la interfaz de usuario, como encabezados, pies de página y botones de carga.
+- **Hooks Personalizados**: Implementación de hooks personalizados para la gestión de datos y efectos secundarios.
+
+## Configuración y Ejecución
+
+Para comenzar con el desarrollo, primero instala las dependencias y luego ejecuta el servidor de desarrollo:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación en funcionamiento.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Despliegue
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+La forma más sencilla de desplegar la aplicación Next.js es utilizando la plataforma [Vercel](https://vercel.com/), creada por los desarrolladores de Next.js.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Para más detalles sobre el despliegue, consulta la [documentación de despliegue de Next.js](https://nextjs.org/docs/deployment).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Dependencias Principales
 
-## Learn More
+- `next`: Framework de React para aplicaciones web.
+- `react`: Biblioteca de JavaScript para construir interfaces de usuario.
+- `mongodb`: Controlador oficial de MongoDB para Node.js.
+- `mongoose`: ODM (Object Data Modeling) para MongoDB y Node.js.
+- `axios`: Cliente HTTP basado en promesas para el navegador y Node.js.
+- `react-markdown`: Renderizador de Markdown para React.
+- `react-syntax-highlighter`: Componente de resaltado de sintaxis para React.
+- `remark-gfm`: Plugin para soporte de GitHub Flavored Markdown.
+- `aos`: Biblioteca para animaciones de desplazamiento.
 
-To learn more about Next.js, take a look at the following resources:
+## Archivos y Componentes Relevantes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Componentes**: 
+  - `Aos`
+  - `Footer`
+  - `Header`
+  - `Loading`
+  - `ScrollToTopBtn`
+  - `TopLoadingLine`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Hooks**: 
+  - `useFetchData`
 
-## Deploy on Vercel
+- **Modelos**: 
+  - `Blog`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Páginas**: 
+  - `_app`
+  - `_document`
+  - `index`
+  - `blog/[slug]`
+  - `topics/[category]`
+  - `tag/[tags]`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **API**: 
+  - `getblog`
